@@ -10,34 +10,37 @@ import { JournalEntryService } from '@services/JournalEntry/journal-entry.servic
 })
 export class JournalEntryComponent implements OnInit {
 
-    categories: string[] = [
-        'Spiritual Life',
-        'Physical Health',
-        'Personal Life',
-        'Key Relationships',
-        'Career',
-        'Business',
-        'Finances',
-        'Skating'
-    ];
-
     journalEntry: JournalEntry;
+    categories: string[];
     
     constructor(private journalService: JournalEntryService) {}
 
     ngOnInit(): void {
         this.journalEntry = new JournalEntry();
+        this.categories = this.journalService.getCategories();
     }
 
     public createJournalEntry(): void {
         this.journalEntry.title = "new title created at: " + this.getTodaysDateISO();
         this.journalEntry.date = this.getTodaysDateISO();
         this.journalService.addEntry(this.journalEntry).subscribe();
+        this.cleanUpJournalEntry();
     }
 
     private getTodaysDateISO(): string {
         let today = new Date();
         return today.toISOString();
+    }
+
+    private cleanUpJournalEntry() {
+        this.journalEntry.category = "";
+        this.journalEntry.description = "";
+        this.journalEntry.duration = 0;
+        this.journalEntry.title = "";
+    }
+
+    onSelectedCategory(category: string): void {
+        this.journalEntry.category = category;
     }
 
 }
