@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <a class="navbar_item" routerLink="/dashboard">Back to Dashboard</a>
+</nav>
+
+<form (ngSubmit)="createJournalEntry()">
+    <div class="category_wrapper">
+        <label for="categories">Which Goal?</label>
+        <select id="categories" 
+            [(ngModel)]="journalEntry.category" name="category">
+            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+        </select>
+    </div>
+
+    <div class="duration_wrapper">
+        <label>.. for how many minutes?</label>
+        <input type="number" [(ngModel)]="journalEntry.duration" name="duration">
+    </div>
+
+    <div class="description_wrapper">
+        <label for="description">Description</label>
+        <input id="description" type="textarea" [(ngModel)]="journalEntry.description" name="description">
+    </div>
+
+    <button type="submit">Log Entry</button>
+    
+
+</form>
