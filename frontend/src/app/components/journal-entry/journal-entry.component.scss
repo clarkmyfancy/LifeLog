@@ -1,12 +1,12 @@
-.thing {
-    display: block;
-    // border: 2px solid red;
-}
-
 .journal_entries_container {
     border: 2px solid black;
 }
 
 .journal_entry {
     border: 2px solid orange;
+}
+
+.description {
+    width: 500px;
+    height: 150px;
 }
