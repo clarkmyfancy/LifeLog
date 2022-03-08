@@ -16,6 +16,19 @@ export class JournalEntryService {
 
     private api_url = '/journal-entries/';
 
+    getCategories(): string[] {
+        return [
+            'Spiritual Life',
+            'Physical Health',
+            'Personal Life',
+            'Key Relationships',
+            'Career',
+            'Business',
+            'Finances',
+            'Skating'
+        ];
+    }
+
 
     getEntries(): Observable<JournalEntry[]> {
         const request = this.client.get<JournalEntry[]>(this.api_url)
