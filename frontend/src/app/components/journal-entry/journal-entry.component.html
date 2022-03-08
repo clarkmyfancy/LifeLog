@@ -4,11 +4,13 @@
 
 <form (ngSubmit)="createJournalEntry()">
     <div class="category_wrapper">
-        <label for="categories">Which Goal?</label>
+        <label for="categories">Which Category?</label>
         <select id="categories" 
             [(ngModel)]="journalEntry.category" name="category">
-            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            <button *ngFor="let category of categories" [value]="category">{{category}}</button>
         </select>
+
+        <button type="button" *ngFor="let category of categories" (click)="onSelectedCategory(category)">{{category}}</button>
     </div>
 
     <div class="duration_wrapper">
@@ -18,7 +20,7 @@
 
     <div class="description_wrapper">
         <label for="description">Description</label>
-        <input id="description" type="textarea" [(ngModel)]="journalEntry.description" name="description">
+        <textarea id="description" [(ngModel)]="journalEntry.description" name="description"></textarea>
     </div>
 
     <button type="submit">Log Entry</button>
