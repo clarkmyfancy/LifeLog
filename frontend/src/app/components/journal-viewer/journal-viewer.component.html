@@ -1,0 +1,9 @@
+<div class="journal_entries_container">
+  <!--  <button (click)="getJournalEntries()">Click me</button>-->
+    <div class="journal_entry" 
+        *ngFor="let entry of entries">
+        <div>{{entry.date}}
+        <div>{{entry.duration}}</div>
+        <div>{{entry.description}}</div>
+    </div>
+</div>

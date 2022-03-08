@@ -1,0 +1,20 @@
+.journal_entries_container {
+    display: flex;
+    flex-direction: column;
+    // box-shadow: 0 0 10px 2px lightgray;
+    border-radius: 5px;
+    width: 60%;
+    margin: 40px auto auto auto;
+    background-color: lightblue;
+}
+
+.journal_entry {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgb(238, 238, 238);
+}
+
+body {
+    background-color: blue;
+}
