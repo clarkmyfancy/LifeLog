@@ -25,7 +25,8 @@ export class JournalEntryService {
             'Career',
             'Business',
             'Finances',
-            'Skating'
+            'Skating',
+            'Software Dev'
         ];
     }
 
