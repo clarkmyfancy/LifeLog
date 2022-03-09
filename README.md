@@ -1,4 +1,4 @@
-### Useful Resources
+### Resources
 
 ##### Dev Stuff
 
