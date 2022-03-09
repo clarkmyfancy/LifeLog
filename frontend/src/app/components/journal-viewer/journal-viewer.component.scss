@@ -10,6 +10,8 @@ body {
     margin: 40px auto auto auto;
     background-color: lightblue;
     border: 2px solid black;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .journal_entry {
@@ -34,4 +36,3 @@ body {
     border: 2px solid orange;
     white-space: pre-line;
 }
-
