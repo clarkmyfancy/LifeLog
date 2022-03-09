@@ -15,5 +15,5 @@ router.register(r'journal-entries', JournalEntryViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('auth/', obtain_auth_token)
+    path('get-auth-token/', obtain_auth_token)
 ]
