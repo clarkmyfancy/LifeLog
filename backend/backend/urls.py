@@ -5,12 +5,14 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 from User.views import UserViewSet
 from JournalEntry.views import JournalEntryViewSet
+from Goals.views import GoalViewSet
 
 
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'journal-entries', JournalEntryViewSet)
+router.register(r'goals', GoalViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
