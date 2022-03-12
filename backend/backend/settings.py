@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'Goals.apps.GoalsConfig',
     'JournalEntry.apps.JournalentryConfig',
     'User.apps.UserConfig',
     'django.contrib.admin',
@@ -134,22 +135,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.AllowAny',
-    # ]
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
 }
 
-
 CORS_ALLOW_ALL_ORIGINS = True 
-
-# allows cookies to be included in cross-site HTTP requests
-# CORS_ALLOW_CREDENTIALS = True
 
 CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 CSRF_HEADER_NAME = 'X-XSRF-TOKEN'
@@ -163,7 +156,3 @@ from corsheaders.defaults import default_headers
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'X-XSRF-TOKEN',
 ]
-# CORS_EXPOSE_HEADERS = [
-#     'X-XSRF-TOKEN'
-# ]
-# CSRF_HEADER_NAME = 'HTTP-X-CSRFTOKEN'
