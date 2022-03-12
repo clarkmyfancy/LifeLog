@@ -10,6 +10,7 @@ import { JournalViewerComponent } from '@components/journal-viewer/journal-viewe
 import { DashboardComponent } from '@components/dashboard/dashboard.component';
 
 import { HttpRequestInterceptor } from '@services/HttpRequestInterceptor';
+import { GoalViewerComponent } from './goal-viewer/goal-viewer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpRequestInterceptor } from '@services/HttpRequestInterceptor';
     DashboardComponent,
     JournalEntryComponent,
     JournalViewerComponent,
+    GoalViewerComponent,
   ],
 
   imports: [
