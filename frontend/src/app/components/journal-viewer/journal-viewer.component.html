@@ -1,4 +1,5 @@
 <div class="journal_entries_container">
+
     <div class="journal_entry" 
         *ngFor="let entry of entries">
         <div class="date_wrapper">{{entry.date | date:'short'}}</div>
@@ -7,4 +8,5 @@
         </div>
         <div class="description_wrapper">{{entry.description}}</div>
     </div>
+    
 </div>
