@@ -14,8 +14,6 @@ export class JournalEntryService {
         private client: HttpClient,
     ) { }
 
-    private api_url = '/journal-entries/';
-
     getCategories(): string[] {
         return [
             'Spiritual Life',
@@ -30,6 +28,7 @@ export class JournalEntryService {
         ];
     }
 
+    private api_url = '/journal-entries/';
 
     getEntries(): Observable<JournalEntry[]> {
         const request = this.client.get<JournalEntry[]>(this.api_url)
