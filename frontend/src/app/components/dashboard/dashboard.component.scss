@@ -1,8 +1,25 @@
+.everything {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid red;
+}
+
+.goals_wrapper {
+    border: 2px dotted purple;
+    width: 30%;
+    height: 400px;
+    margin: auto;
+}
+
+.goal {
+    border: 2px solid green;
+}
+
 .journals_wrapper {
     display: flex;
     justify-content: space-around;
     height: 567px;
-    width: 65%;
+    width: 30%;
     margin: 50px auto 50px auto;
     overflow-y: auto;
 
@@ -13,6 +30,9 @@
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
+
+    border: 3px solid blue;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
