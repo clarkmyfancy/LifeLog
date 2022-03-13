@@ -1,5 +1,21 @@
-<div class="goal">
-    <div class="content">
-        <p>{{goal.content}}</p>
+<div class="goals_wrapper">
+
+    <div class="goal_collection"
+        *ngFor="let goal of goals">
+
+        <div class="left_side">
+            <div class="due_date">
+                <p>{{goal.daysUntilDue}} day left</p>
+            </div>
+            <div class="focus">
+                <p>{{goal.statement}}</p>
+            </div>
+        </div>
+
+        <div class="right_side">
+            <button type="button">Mark Complete</button>
+        </div>
+        
     </div>
+
 </div>

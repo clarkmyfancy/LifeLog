@@ -1,7 +1,29 @@
-.goal {
-    margin: 20px;
+.goals_wrapper {
+    margin: 3%;
 }
 
-.content {
-
+.goal_collection {
+    display: flex;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 5px auto;
+    background-color: yellow;
 }
+
+.left_side {
+    width: 80%;
+    border: 2px solid orange;
+}
+
+.right_side {
+    align-self: center;
+}
+
+.due_date {
+    font-size: small;
+}
+
+.focus {
+    font-weight: bold;
+}
+
