@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from '@components/dashboard/dashboard.component';
+import { GoalViewerComponent } from '@components/goal-viewer/goal-viewer.component';
 import { JournalEntryComponent } from '@components/journal-entry/journal-entry.component';
 import { JournalViewerComponent } from '@components/journal-viewer/journal-viewer.component';
-import { DashboardComponent } from '@components/dashboard/dashboard.component';
 
 import { HttpRequestInterceptor } from '@services/HttpRequestInterceptor';
-import { GoalViewerComponent } from './goal-viewer/goal-viewer.component';
+import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { GoalViewerComponent } from './goal-viewer/goal-viewer.component';
     JournalEntryComponent,
     JournalViewerComponent,
     GoalViewerComponent,
+    GoalCreatorComponent,
   ],
 
   imports: [
