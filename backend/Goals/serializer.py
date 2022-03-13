@@ -10,6 +10,7 @@ class GoalSerializer(serializers.HyperlinkedModelSerializer):
         fields = [
             'content',
             'date_created',
+            'author',
             'statement',
             'focus',
             'days_until_due',
