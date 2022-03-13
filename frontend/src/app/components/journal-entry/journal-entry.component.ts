@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { JournalEntry } from '@viewmodels/JournalEntry';
 import { JournalEntryService } from '@services/JournalEntry/journal-entry.service';
+import { GoalService } from '@services/Goal/goal.service';
+import { Goal } from '@viewmodels/Goal';
 
 @Component({
     selector: 'app-journal-entry',
@@ -12,12 +14,17 @@ export class JournalEntryComponent implements OnInit {
 
     journalEntry: JournalEntry;
     categories: string[];
+    goals: Goal[];
     
-    constructor(private journalService: JournalEntryService) {}
+    constructor(
+        private journalService: JournalEntryService,
+        private goalService: GoalService,
+    ) {}
 
     ngOnInit(): void {
         this.journalEntry = new JournalEntry();
         this.categories = this.journalService.getCategories();
+        this.retrieveGoals();
     }
 
     public createJournalEntry(): void {
@@ -25,6 +32,11 @@ export class JournalEntryComponent implements OnInit {
         this.journalEntry.date = this.getTodaysDateISO();
         this.journalService.addEntry(this.journalEntry).subscribe();
         this.cleanUpJournalEntry();
+    }
+
+    private retrieveGoals(): void {
+        this.goalService.getGoals()
+            .subscribe(goals => this.goals = goals);
     }
 
     private getTodaysDateISO(): string {
