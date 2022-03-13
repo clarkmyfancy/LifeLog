@@ -1,9 +1,14 @@
-import datetime
 from django.db import models
+from django.utils import timezone
 
 class Goal(models.Model):
-    date_created = models.DateTimeField(default=datetime.datetime.now())
-    content = models.CharField(max_length=500)
+    content = models.CharField(max_length=500, default="")
+    date_created = models.DateTimeField(default=timezone.now)
+    statement = models.CharField(max_length=500, default="")
+    focus = models.CharField(max_length=500, default="")
+    days_until_due = models.IntegerField(default=0)
+    how_to_measure_success = models.CharField(max_length=200, blank=True)
+    is_complete = models.BooleanField(default=False)
 
 
     def __str__(self):
