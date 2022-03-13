@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Goal } from '@viewmodels/Goal';
+import { JournalEntry } from '@viewmodels/JournalEntry';
+import { GoalService } from '@services/Goal/goal.service';
 
 @Component({
     selector: 'goal-viewer',
@@ -8,14 +11,23 @@ import { Goal } from '@viewmodels/Goal';
 })
 export class GoalViewerComponent implements OnInit {
 
-    constructor() { }
+    constructor(private goalService: GoalService) { }
 
-    goal: Goal;
+    goals: Goal[];
 
     ngOnInit(): void {
-        this.goal = new Goal();
-        this.goal.content = "Do a kickflip";
+        this.retrieveGoals();
     }
 
-    name: string = "Skating";
+    private retrieveGoals(): void {
+		this.goalService.getGoals()
+			.subscribe(goals => this.goals = goals);
+	}
+
+
+    // FIXME: build out the checked/selected scenarios
+    // private markCompleted(): void {
+
+    // }
+
 }
