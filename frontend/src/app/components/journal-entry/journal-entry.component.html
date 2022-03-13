@@ -2,15 +2,14 @@
     <a class="navbar_item" routerLink="/dashboard">Back to Dashboard</a>
 </nav>
 
-<form (ngSubmit)="createJournalEntry()">
-    <div class="category_wrapper">
-        <label for="categories">Which Category?</label>
-        <select id="categories" 
-            [(ngModel)]="journalEntry.category" name="category">
-            <button *ngFor="let category of categories" [value]="category">{{category}}</button>
-        </select>
+<form class="create_journal_entry_form"
+    (ngSubmit)="createJournalEntry()">
 
-        <button type="button" *ngFor="let category of categories" (click)="onSelectedCategory(category)">{{category}}</button>
+    <div class="category_wrapper">
+        <label for="categories">What is your focus?</label>
+        <button id="categories" type="button" 
+            *ngFor="let category of categories" 
+            (click)="onSelectedCategory(category)">{{category}}</button>
     </div>
 
     <div class="duration_wrapper">
@@ -24,7 +23,7 @@
             [(ngModel)]="journalEntry.description" name="description"></textarea>
     </div>
 
-    <button type="submit">Log Entry</button>
+    <button id="submit_button" type="submit">Log Entry</button>
     
 
 </form>
