@@ -12,4 +12,5 @@ class JournalEntrySerializer(serializers.HyperlinkedModelSerializer):
             'title', 
             'description',
             'category',
+            'related_goal'
         ]
