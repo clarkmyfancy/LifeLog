@@ -55,4 +55,8 @@ export class JournalEntryComponent implements OnInit {
         this.journalEntry.category = category;
     }
 
+    currentlySelectedCategory(buttonsCategory: any): boolean {
+        return buttonsCategory == this.journalEntry.category;
+    }
+
 }

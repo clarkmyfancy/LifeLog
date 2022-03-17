@@ -5,14 +5,39 @@
 .create_journal_entry_form {
     border: 2px solid black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     // align-items: center;
-    width: 70%;
+    width: 90%;
     margin: 20px auto;
 }
 
 .category_wrapper {
     border: 2px solid white;
+    width: 40%;
+}
+
+#pick_a_category_label { 
+    display: block;
+}
+
+.category_buttons {
+    display: inline-block;
+}
+
+.life_category.selected {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+.life_category {
+    display: block;
+}
+
+.duration_and_description_wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid blue;
 }
 
 .duration_wrapper {

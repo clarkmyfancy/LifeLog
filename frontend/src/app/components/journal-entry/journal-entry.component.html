@@ -5,22 +5,42 @@
 <form class="create_journal_entry_form"
     (ngSubmit)="createJournalEntry()">
 
+
+
     <div class="category_wrapper">
-        <label for="categories">What is your focus?</label>
-        <button id="categories" type="button" 
-            *ngFor="let category of categories" 
-            (click)="onSelectedCategory(category)">{{category}}</button>
+        <!-- <label id="pick_a_category_label" for="categories">What area of life?</label>
+        <div class="category_buttons">
+            <button id="categories" class="life_category"type="button" 
+                *ngFor="let category of categories" 
+                (click)="onSelectedCategory(category)">{{category}}</button>
+        </div> -->
+
+        <ul class="category_wrapper">
+            <label id="pick_a_category_label" for="categories">What area of life?</label>
+            <li class="categories"
+                *ngFor="let currentCategory of categories">
+                <button id="categories" class="life_category" 
+                    type="button" 
+                    [class.selected]="currentlySelectedCategory(currentCategory)"
+                    (click)="onSelectedCategory(currentCategory)">{{currentCategory}}</button>
+            </li>
+        </ul>
+
     </div>
 
-    <div class="duration_wrapper">
-        <label>.. for how many minutes?</label>
-        <input type="number" [(ngModel)]="journalEntry.duration" name="duration">
-    </div>
+    <div class="duration_and_description_wrapper">
 
-    <div class="description_wrapper">
-        <label for="description">Description</label>
-        <textarea class="description" id="description" 
-            [(ngModel)]="journalEntry.description" name="description"></textarea>
+    
+        <div class="duration_wrapper">
+            <label>.. for how many minutes?</label>
+            <input type="number" [(ngModel)]="journalEntry.duration" name="duration">
+        </div>
+
+        <div class="description_wrapper">
+            <label for="description">Description</label>
+            <textarea class="description" id="description" 
+                [(ngModel)]="journalEntry.description" name="description"></textarea>
+        </div>
     </div>
 
     <button id="submit_button" type="submit">Log Entry</button>
