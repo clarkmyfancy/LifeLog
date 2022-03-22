@@ -20,8 +20,8 @@ import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.comp
     DashboardComponent,
     JournalEntryComponent,
     JournalViewerComponent,
-    GoalViewerComponent,
     GoalCreatorComponent,
+    GoalViewerComponent,
   ],
 
   imports: [
