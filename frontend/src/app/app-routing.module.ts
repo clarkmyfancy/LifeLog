@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from '@components/dashboard/dashboard.component';
-import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.component';
+import { GoalViewerComponent } from '@components/goal-viewer/goal-viewer.component';
 import { JournalEntryComponent } from '@components/journal-entry/journal-entry.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path:'goals',
-    component: GoalCreatorComponent
+    component: GoalViewerComponent
   },
   { 
     path: '',
