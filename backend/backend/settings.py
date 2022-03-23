@@ -158,6 +158,3 @@ from corsheaders.defaults import default_headers
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'X-XSRF-TOKEN',
 ]
-
-import django_heroku
-django_heroku.settings(locals())
