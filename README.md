@@ -1,5 +1,7 @@
 The purpose of this is to take the place of all journaling and goal setting. Currently I use several different apps to track my productive time and journal about what specifically was worked on and for how long. This app will take journal entries and combign them with goals in a visual tree-structure so you can see your productive time build up into a massive tree!
 
+Essentially it will be a one-stop-shop for a daily-todo list, journaling productive time, and setting goals with an emphasis on looking and feeling super cool.
+
 ### Resources
 
 ----
