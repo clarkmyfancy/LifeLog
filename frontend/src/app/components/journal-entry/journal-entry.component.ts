@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { JournalEntry } from '@viewmodels/JournalEntry';
-import { JournalEntryService } from '@services/JournalEntry/journal-entry.service';
-import { GoalService } from '@services/Goal/goal.service';
 import { Goal } from '@viewmodels/Goal';
+import { JournalEntry } from '@viewmodels/JournalEntry';
+
+import { GoalService } from '@services/Goal/goal.service';
+import { JournalEntryService } from '@services/JournalEntry/journal-entry.service';
+import { LabelService } from '@services/Label/label.service';
 
 @Component({
     selector: 'app-journal-entry',
@@ -14,16 +16,19 @@ export class JournalEntryComponent implements OnInit {
 
     journalEntry: JournalEntry;
     categories: string[];
+    labels: string[];
     goals: Goal[];
     
     constructor(
         private journalService: JournalEntryService,
+        private labelService: LabelService,
         private goalService: GoalService,
     ) {}
 
     ngOnInit(): void {
         this.journalEntry = new JournalEntry();
-        this.categories = this.journalService.getCategories();
+        this.categories = this.labelService.getLabels();
+        this.labels = this.labelService.getLabels();
         this.retrieveGoals();
     }
 
