@@ -15,7 +15,12 @@ Frontend -> https://lifelog-frontend.herokuapp.com
 
 ##### Project Management
 - [Backlog](https://trello.com/b/5hr86vo6/lifelog-backlog)
+  - location of deployments
+  - completed work
+  - feature ideas
+  - noticed bugs
 - [Goalboard](https://trello.com/b/82O5xSIu/lifelog-goalboard)
+  - (an experiment to replace "sprint backlog") contains the single aim of the current sprint and the breakdown of tasks to achieve that goal
 
 ----
 
