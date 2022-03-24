@@ -8,21 +8,15 @@
 
 
     <div class="category_wrapper">
-        <!-- <label id="pick_a_category_label" for="categories">What area of life?</label>
-        <div class="category_buttons">
-            <button id="categories" class="life_category"type="button" 
-                *ngFor="let category of categories" 
-                (click)="onSelectedCategory(category)">{{category}}</button>
-        </div> -->
 
         <ul class="category_wrapper">
-            <label id="pick_a_category_label" for="categories">What area of life?</label>
+            <label id="pick_a_category_label" for="categories">Add a label</label>
             <li class="categories"
-                *ngFor="let currentCategory of categories">
+                *ngFor="let thisCategory of categories">
                 <button id="categories" class="life_category" 
                     type="button" 
-                    [class.selected]="currentlySelectedCategory(currentCategory)"
-                    (click)="onSelectedCategory(currentCategory)">{{currentCategory}}</button>
+                    [class.selected]="currentlySelectedCategory(thisCategory)"
+                    (click)="onSelectedCategory(thisCategory)">{{thisCategory}}</button>
             </li>
         </ul>
 
