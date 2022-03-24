@@ -14,21 +14,6 @@ export class JournalEntryService {
         private client: HttpClient,
     ) { }
 
-    // FIXME: there is a better place for this (2022-03-12)
-    getCategories(): string[] {
-        return [
-            'Spiritual Life',
-            'Physical Health',
-            'Personal Life',
-            'Key Relationships',
-            'Career',
-            'Business',
-            'Finances',
-            'Skating',
-            'Software Dev'
-        ];
-    }
-
     private api_url = '/journal-entries/';
 
     getEntries(): Observable<JournalEntry[]> {
