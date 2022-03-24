@@ -5,7 +5,7 @@
 
         <div class="date_and_labels_container">
             <div class="date_wrapper">{{entry.date | date:'short'}}</div>
-            <div class="label_wrapper">{{entry.category}}</div>
+            <div [ngClass]="generateClassFor(entry.category)">{{entry.category}}</div>
         </div>
 
         <div class="duration_and_category_wrapper">
