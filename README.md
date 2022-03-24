@@ -7,9 +7,9 @@ Essentially it will be a one-stop-shop for a daily-todo list, journaling product
 ----
 
 ##### Sites
-Backend -> https://lifelog-backend-api.herokuapp.com
-
 Frontend -> https://lifelog-frontend.herokuapp.com
+
+Backend -> https://lifelog-backend-api.herokuapp.com
 
 ----
 
