@@ -19,6 +19,7 @@ Frontend -> https://lifelog-frontend.herokuapp.com
   - completed work
   - feature ideas
   - noticed bugs
+  - problems encountered with descriptions of how they were solved
 - [Goalboard](https://trello.com/b/82O5xSIu/lifelog-goalboard)
   - (an experiment to replace "sprint backlog") contains the single aim of the current sprint and the breakdown of tasks to achieve that goal
 
