@@ -14,7 +14,7 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 
 	constructor(private journalService: JournalEntryService) { }
 
-	entries: JournalEntry[] = [];
+	allEntries: JournalEntry[] = [];
 	entriesToDisplay: JournalEntry[] = [];
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -24,14 +24,21 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 				if (!filter_choice.isFirstChange()) {
 					const new_filter_ugly = JSON.stringify(filter_choice.currentValue);
 					const new_filter = JSON.parse(new_filter_ugly);
-					this.entriesToDisplay = this.filter_entries_to_display_based_on(new_filter);
+					this.entriesToDisplay = this.filterEntriesToDisplayBasedOn(new_filter);
 				}
 			}
 		}
 	}
 
-	private filter_entries_to_display_based_on(new_filter: string): JournalEntry[] {
-		return this.entries.filter(element => element.category == new_filter);
+	private filterEntriesToDisplayBasedOn(new_filter: string): JournalEntry[] {
+		var candidate_entries: JournalEntry[];
+		if (new_filter == "") {
+			candidate_entries = this.allEntries; 
+		}
+		else {
+			candidate_entries = this.allEntries.filter(element => element.category == new_filter);
+		}
+		return candidate_entries;
 	}
 
 	ngOnInit(): void {
@@ -41,8 +48,8 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 	private populateEntries(): void {
 		this.journalService.getEntries()
 			.subscribe(entries => {
-				this.entries = this.sortDescending(entries)
-				this.entriesToDisplay = this.entries;
+				this.allEntries = this.sortDescending(entries)
+				this.entriesToDisplay = this.allEntries;
 			});
 	}
 
