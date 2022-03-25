@@ -1,11 +1,19 @@
+// // * {
+// //     background-color: blue;
+// // }
+// journal-viewer {
+//     background-color: blue;
+// }
+
 .journal_entries_container {
     display: flex;
     flex-direction: column;
+    border: 2px solid black;
+
     border-radius: 5px;
     width: 60%;
-    margin: 40px auto auto auto;
+    margin: 40px auto;
     background-color: lightblue;
-    border: 2px solid black;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -34,7 +42,6 @@
     padding: 2px 8px;
     border-radius: 7px;
     background-color: blue;
-    color: white;
 }
 
 .lightblue {
@@ -72,6 +79,6 @@
 }
 
 .description_wrapper {
-    border: 2px solid orange;
+    border: 2px dotted orange;
     white-space: pre-line;
 }
