@@ -6,11 +6,28 @@
 
 
 <div class="everything">
-    <div class="journals_wrapper">
-        <div class="journals">
-            <journal-viewer></journal-viewer>
+    
+
+    <div class="journal_viewer_wrapper">
+
+        <div class="filter_bar">
+            <label>Filter by category:</label>
+            <button type="button" class="filter" 
+                *ngFor="let thisFilter of filters" 
+                [class.selected]="currentlySelectedFilter(thisFilter)"
+                (click)="a_filter_was_clicked(thisFilter)">{{thisFilter}}</button>
+        </div>
+
+        <div class="journals_wrapper">
+            <div class="journals">
+                <journal-viewer 
+                    [journalEntryType]="selectedFilter"></journal-viewer>
+            </div>
         </div>
     </div>
+
+
+
 </div>
 
 
