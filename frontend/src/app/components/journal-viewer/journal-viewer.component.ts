@@ -2,7 +2,6 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 
 import { JournalEntryService } from '@services/JournalEntry/journal-entry.service';
 import { JournalEntry } from '@viewmodels/JournalEntry';
-import { Label } from '@viewmodels/Label';
 
 @Component({
 	selector: 'journal-viewer',
@@ -18,10 +17,6 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 	entries: JournalEntry[] = [];
 	entriesToDisplay: JournalEntry[] = [];
 
-	// ngOnChanges(changes: SimpleChanges): void {
-
-	// }
-
 	ngOnChanges(changes: SimpleChanges) {
 		for (const propName in changes) {
 			if (propName == "journalEntryType") {
@@ -35,6 +30,10 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 		}
 	}
 
+	private filter_entries_to_display_based_on(new_filter: string): JournalEntry[] {
+		return this.entries.filter(element => element.category == new_filter);
+	}
+
 	ngOnInit(): void {
 		this.populateEntries();
 	}
@@ -45,10 +44,6 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 				this.entries = this.sortDescending(entries)
 				this.entriesToDisplay = this.entries;
 			});
-	}
-
-	private filter_entries_to_display_based_on(new_filter: string): JournalEntry[] {
-		return this.entries.filter(element => element.category == new_filter);
 	}
 
 	private sortDescending(entries: JournalEntry[]): JournalEntry[] {
@@ -66,6 +61,17 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 		return sorted_entries;
 	}
 
+	public generateClassFor(category: string): string {
+		var classes = "label_wrapper ";
+		let label_to_color = this.createLabels();
+		label_to_color.forEach(label => {
+			if (label.name == category) {
+				classes = classes.concat(label.color);
+			}
+		});
+		return classes;
+	}
+
 	private createLabels(): any[] {
 		return [
 			{ name: "mental", color: "lightblue" } ,
@@ -78,17 +84,4 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 			
 		]
 	}
-	
-	public generateClassFor(category: string): string {
-		var classes = "label_wrapper ";
-		let label_to_color = this.createLabels();
-		label_to_color.forEach(label => {
-			if (label.name == category) {
-				classes = classes.concat(label.color);
-			}
-		});
-		return classes;
-	}
-
-
 }
