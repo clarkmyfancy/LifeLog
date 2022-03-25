@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit(): void {
         this.filters = this.getFilters();
+        this.selectedFilter = "";
     }
 
     private getFilters(): string[] {
@@ -26,8 +27,16 @@ export class DashboardComponent implements OnInit {
         this.selectedFilter = choice;
     }
 
+    public clearSelectedFilter(): void {
+        this.selectedFilter = "";
+    }
+
     currentlySelectedFilter(chosenFilter: any): boolean {
         return chosenFilter == this.selectedFilter;
     }
+
+    nothingToFilter(): boolean {
+		return this.selectedFilter == "";
+	}
 
 }
