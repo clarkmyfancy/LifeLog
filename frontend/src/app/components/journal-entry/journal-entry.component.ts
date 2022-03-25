@@ -60,6 +60,7 @@ export class JournalEntryComponent implements OnInit {
         this.journalEntry.category = category;
     }
 
+    // FIXME: this function is duplicated, does it need to be dry? 
     currentlySelectedCategory(buttonsCategory: any): boolean {
         return buttonsCategory == this.journalEntry.category;
     }
