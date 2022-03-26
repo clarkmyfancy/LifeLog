@@ -1,16 +1,16 @@
 <nav class="navbar">
-    <a class="navbar_item" routerLink="/dashboard">Back to Dashboard</a>
+    <a class="navbar_item" routerLink="/dashboard">Back</a>
 </nav>
 
 <form class="create_journal_entry_form"
     (ngSubmit)="createJournalEntry()">
 
 
+    <ul class="category_wrapper">
+        <label id="pick_a_category_label" class="label_group_title"
+            for="categories">Add a label</label>
 
-    <div class="category_wrapper">
-
-        <ul class="category_wrapper">
-            <label id="pick_a_category_label" for="categories">Add a label</label>
+        <div class="thigns">
             <li class="categories"
                 *ngFor="let thisCategory of categories">
                 <button id="categories" class="life_category" 
@@ -18,9 +18,10 @@
                     [class.selected]="currentlySelectedCategory(thisCategory)"
                     (click)="onSelectedCategory(thisCategory)">{{thisCategory}}</button>
             </li>
-        </ul>
+        </div>
 
-    </div>
+    </ul>
+
 
     <div class="duration_and_description_wrapper">
 
@@ -31,13 +32,15 @@
         </div>
 
         <div class="description_wrapper">
-            <label for="description">Description</label>
-            <textarea class="description" id="description" 
-                [(ngModel)]="journalEntry.description" name="description"></textarea>
+            <textarea class="description" id="description" name="description"
+                placeholder="I worked on ..."
+                [(ngModel)]="journalEntry.description" ></textarea>
         </div>
+
+        <button id="submit_button" type="submit">Log Entry</button>
     </div>
 
-    <button id="submit_button" type="submit">Log Entry</button>
+    
     
 
 </form>
