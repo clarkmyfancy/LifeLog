@@ -11,7 +11,9 @@ import { JournalEntry } from '@viewmodels/JournalEntry';
 })
 export class GoalService {
 
-    constructor(private client: HttpClient,) { }
+    constructor(
+        private client: HttpClient
+    ) { }
 
     private api_url = '/goals/';
 
