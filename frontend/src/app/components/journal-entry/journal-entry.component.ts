@@ -15,9 +15,39 @@ import { LabelService } from '@services/Label/label.service';
 export class JournalEntryComponent implements OnInit {
 
     journalEntry: JournalEntry;
+
     categories: string[];
+    chosenCategory: string;
+    categoryWasChosen: boolean;
+    chosenSubcategory: string;
+
     labels: string[];
     goals: Goal[];
+
+    subcategory_map: { [key: string]: string[] } = {
+        "mental": [],
+        "physical": [ 
+            "Diet",
+            "Training",
+            "General Health"],
+        "personal": [],
+        "family": [
+            "Spouse",
+            "Friends",
+            "Kids",
+            "Pets"
+        ],
+        "job": [],
+        "business": [],
+        "financial": [
+            "Circle of Professionals", 
+            "Assets",
+            "Income",
+            "Debt"
+        ]
+    };
+
+    
     
     constructor(
         private journalService: JournalEntryService,
@@ -27,6 +57,7 @@ export class JournalEntryComponent implements OnInit {
 
     ngOnInit(): void {
         this.journalEntry = new JournalEntry();
+        this.chosenCategory = "";
         this.categories = this.labelService.getLabels();
         this.labels = this.labelService.getLabels();
         this.retrieveGoals();
@@ -57,12 +88,55 @@ export class JournalEntryComponent implements OnInit {
     }
 
     onSelectedCategory(category: string): void {
+        this.categoryWasChosen = true;
+        this.chosenCategory = category;
         this.journalEntry.category = category;
+    }
+
+    shouldDisplaySubcategoriesFor(areaOfLife: string): boolean {
+        let userSelectedAnAreaOfLife = this.userSelectedAreaOfLifeLabel();
+        let areaOfLifeActuallyHasSubcategories = this.areaOfLifeContainsAnySubcategories(areaOfLife); 
+        return userSelectedAnAreaOfLife && areaOfLifeActuallyHasSubcategories;
+    }
+
+    getRelevantSubcategories(parentCategory: string): string[] {
+        var results: string[] = [];
+        if (parentCategory in this.subcategory_map) {
+            results = this.subcategory_map[parentCategory];
+        }
+        return results;
+    }
+
+    public userSelectedAreaOfLifeLabel(): boolean {
+        return this.categoryWasChosen == true;
+    }
+
+    public areaOfLifeContainsAnySubcategories(key: string): boolean {
+        return this.findMapping(key).length >= 1;
+    }
+
+    // FIXME: this function is called for each button, there is a more efficient way to handle this
+    public findMapping(key: string): string[] {
+        var results: string[] = [];
+        if (this.subcategory_map.hasOwnProperty(key)) {
+            results = this.subcategory_map[key];
+        }
+        return results;
     }
 
     // FIXME: this function is duplicated, does it need to be dry? 
     currentlySelectedCategory(buttonsCategory: any): boolean {
         return buttonsCategory == this.journalEntry.category;
     }
+
+    currentlySelectedSubCategory(topic: string): boolean {
+        return topic == this.chosenSubcategory;
+    }
+
+    onSelectedSubcategory(subcategory: string): void {
+        this.chosenSubcategory = subcategory;
+    }
+
+    
 
 }

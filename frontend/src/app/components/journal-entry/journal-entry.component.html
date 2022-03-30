@@ -5,15 +5,14 @@
 <form class="create_journal_entry_form"
     (ngSubmit)="createJournalEntry()">
 
-
-    <ul class="category_wrapper">
+    <ul class="life_category_wrapper general_category_wrapper">
         <label id="pick_a_category_label" class="label_group_title"
-            for="categories">Add a label</label>
+            for="categories">Which area of life?</label>
 
         <div class="thigns">
             <li class="categories"
                 *ngFor="let thisCategory of categories">
-                <button id="categories" class="life_category" 
+                <button class="life_category" 
                     type="button" 
                     [class.selected]="currentlySelectedCategory(thisCategory)"
                     (click)="onSelectedCategory(thisCategory)">{{thisCategory}}</button>
@@ -22,10 +21,24 @@
 
     </ul>
 
+    <ul class="subcategory_wrapper general_category_wrapper"
+        *ngIf="shouldDisplaySubcategoriesFor(chosenCategory)">
+        <label id="pick_a_category_label" class="label_group_title"
+            for="categories">What topic?</label>
+        
+        <div class="thigns">
+            <li class="categories"
+                *ngFor="let subcategory of getRelevantSubcategories(chosenCategory)">
+                <button id="categories" class="life_category" 
+                    type="button"
+                    [class.selected]="currentlySelectedSubCategory(subcategory)"
+                    (click)="onSelectedSubcategory(subcategory)">{{subcategory}}</button>
+            </li>
+        </div>
+
+    </ul>
 
     <div class="duration_and_description_wrapper">
-
-    
         <div class="duration_wrapper">
             <label>.. for how many minutes?</label>
             <input type="number" [(ngModel)]="journalEntry.duration" name="duration">
@@ -39,8 +52,5 @@
 
         <button id="submit_button" type="submit">Log Entry</button>
     </div>
-
-    
-    
 
 </form>
