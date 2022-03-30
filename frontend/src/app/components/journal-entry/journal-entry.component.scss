@@ -5,13 +5,14 @@
     margin: 20px auto;
 }
 
-.category_wrapper {
+.general_category_wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     min-width: 50vh;
     list-style-type: none;
+    border: 2px solid green;
 }
 
 .thigns {
@@ -21,10 +22,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-}
-
-.label_group_title {
-    // border: 2px solid red;
 }
 
 #pick_a_category_label { 
@@ -41,11 +38,6 @@
     background-color: blue;
     color: white;
     border-radius: 5px;
-}
-
-.life_category {
-    // display: block;
-    // border: 2px solid orange;
 }
 
 .duration_and_description_wrapper {
