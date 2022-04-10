@@ -12,6 +12,7 @@ import { JournalViewerComponent } from '@components/journal-viewer/journal-viewe
 
 import { HttpRequestInterceptor } from '@services/HttpRequestInterceptor';
 import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.component';
+import { CategoryChooserComponent } from './components/journal-entry/category-chooser/category-chooser.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.comp
     JournalViewerComponent,
     GoalCreatorComponent,
     GoalViewerComponent,
+    CategoryChooserComponent,
   ],
 
   imports: [
