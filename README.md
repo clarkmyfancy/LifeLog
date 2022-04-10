@@ -7,9 +7,7 @@ A one-stop-shop for planning and winning the day, journaling productive time, an
 ----
 
 ##### Sites
-Frontend -> https://lifelog-frontend.herokuapp.com
-
-Backend -> https://lifelog-backend-api.herokuapp.com
+Production -> https://lifelog-frontend.herokuapp.com
 
 ----
 
