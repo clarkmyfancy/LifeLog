@@ -8,8 +8,10 @@ class JournalEntrySerializer(serializers.HyperlinkedModelSerializer):
         fields = [
             'author', 
             'date', 
+            'related_goal',
+            'category',
+            'topic_area',
+            'subtopic_area',
             'duration', 
             'description',
-            'category',
-            'related_goal'
         ]
