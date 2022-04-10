@@ -9,33 +9,21 @@
         <label id="pick_a_category_label" class="label_group_title"
             for="categories">Which area of life?</label>
 
-        <div class="thigns">
+        <div class="categories_wrapper">
             <li class="categories"
-                *ngFor="let thisCategory of categories">
+                *ngFor="let thisCategory of categories | keyvalue">
                 <button class="life_category" 
                     type="button" 
-                    [class.selected]="currentlySelectedCategory(thisCategory)"
-                    (click)="onSelectedCategory(thisCategory)">{{thisCategory}}</button>
+                    [class.selected]="currentlySelectedCategory(thisCategory.key)"
+                    (click)="onSelectedCategory(thisCategory.key)">{{thisCategory.key}}</button>
             </li>
         </div>
 
-    </ul>
-
-    <ul class="subcategory_wrapper general_category_wrapper"
-        *ngIf="shouldDisplaySubcategoriesFor(chosenCategory)">
-        <label id="pick_a_category_label" class="label_group_title"
-            for="categories">What topic?</label>
-        
-        <div class="thigns">
-            <li class="categories"
-                *ngFor="let subcategory of getRelevantSubcategories(chosenCategory)">
-                <button id="categories" class="life_category" 
-                    type="button"
-                    [class.selected]="currentlySelectedSubCategory(subcategory)"
-                    (click)="onSelectedSubcategory(subcategory)">{{subcategory}}</button>
-            </li>
-        </div>
-
+        <category-chooser 
+            [chosenCategory]="chosenCategory" 
+            (topicAreaWasChosenEvent)="handleTopicAreaChange($event)"
+            (hobbyWasChosenEvent)="handleHobbyChange($event)"
+            *ngIf="shouldDisplaySubcategoriesFor(chosenCategory)"></category-chooser>
     </ul>
 
     <div class="duration_and_description_wrapper">

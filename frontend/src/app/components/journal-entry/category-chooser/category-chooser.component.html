@@ -1,0 +1,33 @@
+<ul class="subcategory_wrapper general_category_wrapper">
+    <label id="pick_a_topic_area" class="label_group_title"
+        for="topic_areas">Topic area</label>
+    
+    <div class="things">
+        <li class="topic_areas"
+            *ngFor="let topic_area of getRelevantTopicAreas() | keyvalue">
+            <button id="categories" class="topic_areas selectable_zone" type="button"
+                (click)="onSelectedTopicArea(topic_area.key)"
+                [class.selected]="currentlySelectedTopic(topic_area.key)">
+                {{topic_area.key}}</button>
+        </li>
+    </div>
+
+</ul>
+
+<ul class="hobbies_wrapper general_category_wrapper"
+    *ngIf="shouldDisplayHobbiesForTopicArea()">
+
+    <label id="pick_a_hobby" class="label_group_title"
+        for="hobbies">What hobby?</label>
+    
+    <div class="things">
+        <li class="hobbies"
+            *ngFor="let hobby of getRelevantHobbiesForChosenTopicArea()">
+            <button class="hobby selectable_zone" type="button"
+                (click)="onSelectedHobby(hobby)"
+                [class.selected]="currentlySelectedHobby(hobby)">{{hobby}}</button>
+                
+        </li>
+    </div>
+
+</ul>

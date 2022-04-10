@@ -1,0 +1,30 @@
+.general_category_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    min-width: 50vh;
+    list-style-type: none;
+    border: 2px solid green;
+}
+
+
+// FIXME: THIS IS DUPLICATED FROM THE JOURNAL-ENTRY COMPONENT SCSS
+.things {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.selectable_zone {
+    display: inline-block;
+    padding: 5px;
+}
+
+.selectable_zone.selected {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
