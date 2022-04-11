@@ -7,6 +7,9 @@ The purpose of this is to replace all journaling, to-do-list-creating and goal s
 ----
 
 ##### Sites
+
+Note: this is deployed to a free heroku account. that means the dynos will spin-down after a few minutes of inactivity. If you click the link and nothing happens, just be patient :) and the dynos will spin up eventually
+
 Production -> https://lifelog-frontend.herokuapp.com
 
 ----
