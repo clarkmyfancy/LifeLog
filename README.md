@@ -1,4 +1,4 @@
-A one-stop-shop for planning and winning the day, journaling productive time, and setting  and achieving goals.
+A one-stop-shop for planning and winning the day. Journaling + todolist (coming soon) + setting and achieving goals (coming soon) with the first-of-it's kind way to display journal entries that will be highly searchable, reflectable, and motivating way.  
 
 The purpose of this is to replace all journaling, to-do-list-creating and goal setting. Currently I use several different apps to track my productive time and journal about what specifically was worked on and for how long. This app will take journal entries and combign them with goals in a visual tree-structure so you can see your productive time build up into a massive tree!
 
