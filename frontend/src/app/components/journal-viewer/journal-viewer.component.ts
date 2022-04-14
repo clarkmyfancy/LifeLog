@@ -11,7 +11,7 @@ import { JournalEntry } from '@viewmodels/JournalEntry';
 })
 export class JournalViewerComponent implements OnInit, OnChanges {
 
-	@Input() journalEntryType = '';
+	// @Input() journalEntryType = '';
 
 	constructor(
 		private journalService: JournalEntryService,
@@ -27,6 +27,7 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		for (const propName in changes) {
+			console.log(propName);
 			if (propName == "journalEntryType") {
 				const filter_choice = changes[propName];
 				if (!filter_choice.isFirstChange()) {
@@ -110,15 +111,30 @@ export class JournalViewerComponent implements OnInit, OnChanges {
     }
 
     public a_filter_was_clicked(choice: string): void {
-        this.selectedFilter = choice;
+		if (this.selectedFilter.toUpperCase() != choice.toUpperCase()) {
+			this.selectedFilter = choice;
+			this.applyFilterToEntries();
+		}
     }
+
+	private applyFilterToEntries(): void {
+		var candidate_entries: JournalEntry[];
+		if (this.selectedFilter == "") {
+			candidate_entries = this.allEntries; 
+		}
+		else {
+			candidate_entries = this.allEntries.filter(element => element.category == this.selectedFilter);
+		}
+		this.entriesToDisplay = candidate_entries;
+	}
 
     public clearSelectedFilter(): void {
         this.selectedFilter = "";
+		this.applyFilterToEntries();
     }
 
     currentlySelectedFilter(chosenFilter: any): boolean {
-        return chosenFilter == this.selectedFilter;
+        return chosenFilter.toUpperCase() == this.selectedFilter.toUpperCase();
     }
 
     nothingToFilter(): boolean {
@@ -126,7 +142,6 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 	}
 
 	determineAppropriotThing(entry: JournalEntry): string {
-		console.log(entry);
 		var results: string = "";
 		// order matters here
 		if (entry.subtopic_area) {
