@@ -1,15 +1,30 @@
+
+<div class="filter_bar">
+    <label>Filter by category:</label>
+    <button type="button" class="filter_bar_button" 
+        *ngFor="let thisFilter of filters" 
+        [class.selected]="currentlySelectedFilter(thisFilter)"
+        (click)="a_filter_was_clicked(thisFilter)">{{thisFilter}}</button>
+    <button type="button" class="clear_filter_button filter_bar_button"
+        (click)="clearSelectedFilter()"
+        [disabled]="nothingToFilter()">clear</button>
+</div>
+
+
+
 <div class="journal_entries_container">
 
     <div class="journal_entry" 
         *ngFor="let entry of entriesToDisplay">
 
+        <!-- the changable filter at the top right of each card -->
         <div class="date_and_labels_container">
             <div class="date_wrapper">{{entry.date | date:'short'}}</div>
             <div [ngClass]="generateClassFor(entry.category)">{{entry.category}}</div>
         </div>
 
         <div class="duration_and_category_wrapper">
-            <div class="duration_wrapper">{{entry.duration}} minutes - {{entry.category}}</div>
+            <div class="duration_wrapper">{{entry.duration}} minutes - {{determineAppropriotThing(entry)}}</div>
         </div>
         
         <div class="description_wrapper">{{entry.description}}</div>

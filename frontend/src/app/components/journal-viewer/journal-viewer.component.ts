@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 import { JournalEntryService } from '@services/JournalEntry/journal-entry.service';
+import { LabelService } from '@services/Label/label.service';
 import { JournalEntry } from '@viewmodels/JournalEntry';
 
 @Component({
@@ -12,10 +13,17 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 
 	@Input() journalEntryType = '';
 
-	constructor(private journalService: JournalEntryService) { }
+	constructor(
+		private journalService: JournalEntryService,
+		private filterService: LabelService
+	) { }
 
 	allEntries: JournalEntry[] = [];
 	entriesToDisplay: JournalEntry[] = [];
+
+
+    filters: string[];
+    selectedFilter: string;
 
 	ngOnChanges(changes: SimpleChanges) {
 		for (const propName in changes) {
@@ -43,6 +51,8 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 
 	ngOnInit(): void {
 		this.populateEntries();
+		this.filters = this.getFilters();
+        this.selectedFilter = "";
 	}
 
 	private populateEntries(): void {
@@ -72,7 +82,7 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 		var classes = "label_wrapper ";
 		let label_to_color = this.createLabels();
 		label_to_color.forEach(label => {
-			if (label.name == category) {
+			if ( label.name.toUpperCase() == category.toUpperCase()) {
 				classes = classes.concat(label.color);
 			}
 		});
@@ -90,5 +100,44 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 			{ name: "financial", color: "lightgreen" }
 			
 		]
+	}
+
+
+
+
+    private getFilters(): string[] {
+        return this.filterService.getLabels();
+    }
+
+    public a_filter_was_clicked(choice: string): void {
+        this.selectedFilter = choice;
+    }
+
+    public clearSelectedFilter(): void {
+        this.selectedFilter = "";
+    }
+
+    currentlySelectedFilter(chosenFilter: any): boolean {
+        return chosenFilter == this.selectedFilter;
+    }
+
+    nothingToFilter(): boolean {
+		return this.selectedFilter == "";
+	}
+
+	determineAppropriotThing(entry: JournalEntry): string {
+		console.log(entry);
+		var results: string = "";
+		// order matters here
+		if (entry.subtopic_area) {
+			results = entry.subtopic_area;
+		}
+		else if (entry.topic_area) {
+			results = entry.topic_area;
+		}
+		else {
+			results = entry.category;
+		}
+		return results;
 	}
 }
