@@ -1,10 +1,12 @@
 
 <div class="filter_bar">
     <label>Filter by category:</label>
+
     <button type="button" class="filter_bar_button" 
         *ngFor="let thisFilter of filters" 
         [class.selected]="currentlySelectedFilter(thisFilter)"
         (click)="a_filter_was_clicked(thisFilter)">{{thisFilter}}</button>
+        
     <button type="button" class="clear_filter_button filter_bar_button"
         (click)="clearSelectedFilter()"
         [disabled]="nothingToFilter()">clear</button>
