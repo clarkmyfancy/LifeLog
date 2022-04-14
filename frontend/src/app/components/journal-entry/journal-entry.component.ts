@@ -92,12 +92,12 @@ export class JournalEntryComponent implements OnInit {
 
     handleTopicAreaChange(subcategory: string): void {
         this.chosenSubcategory = subcategory;
-        this.journalEntry.topicArea = subcategory;
+        this.journalEntry.topic_area = subcategory;
     }
 
     handleHobbyChange(hobby: string): void {
         this.chosenHobby = hobby;
-        this.journalEntry.subtopicArea = hobby;
+        this.journalEntry.subtopic_area = hobby;
     }
 
 }

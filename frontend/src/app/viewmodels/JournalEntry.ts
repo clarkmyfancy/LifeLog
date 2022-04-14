@@ -3,8 +3,8 @@ import { Label } from "@viewmodels/Label";
 export class JournalEntry {
 
     public category: string;
-    public topicArea: string;
-    public subtopicArea: string;
+    public topic_area: string;
+    public subtopic_area: string;
 
     public author: number;
     public date: string;
