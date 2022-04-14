@@ -9,13 +9,13 @@ export class LabelService {
 
     public getLabels(): string[] {
         return [
-            'mental',
-            'physical',
-            'personal',
-            'family',
-            'job',
-            'business',
-            'financial',
+            'Mental',
+            'Physical',
+            'Personal',
+            'Family',
+            'Job',
+            'Business',
+            'Financial',
         ];
     }
 }
