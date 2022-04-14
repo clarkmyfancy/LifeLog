@@ -82,3 +82,32 @@
     border: 2px dotted orange;
     white-space: pre-line;
 }
+
+.filter_bar {
+    width: auto;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.filter_bar_button {
+    background-color: white;
+    border: 2px solid black;
+    display: inline;
+    margin-left: 20px;
+}
+
+
+.filter.selected {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.clear_filter_button {
+    background-color: rgb(214, 104, 84);
+}
+
+.clear_filter_button:disabled {
+    background-color: rgb(255, 188, 176);
+}
