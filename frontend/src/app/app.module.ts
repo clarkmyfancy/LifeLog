@@ -13,6 +13,9 @@ import { JournalViewerComponent } from '@components/journal-viewer/journal-viewe
 import { HttpRequestInterceptor } from '@services/HttpRequestInterceptor';
 import { GoalCreatorComponent } from '@components/goal-creator/goal-creator.component';
 import { CategoryChooserComponent } from './components/journal-entry/category-chooser/category-chooser.component';
+import { TodayviewComponent } from '@components/today-view/today-view.component';
+import { SuccessListComponent } from '@components/success-list/success-list.component';
+import { TodoListItemComponent } from '@components/todo-list-item/todo-list-item.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { CategoryChooserComponent } from './components/journal-entry/category-ch
     GoalCreatorComponent,
     GoalViewerComponent,
     CategoryChooserComponent,
+    TodayviewComponent,
+    SuccessListComponent,
+    TodoListItemComponent,
   ],
 
   imports: [
