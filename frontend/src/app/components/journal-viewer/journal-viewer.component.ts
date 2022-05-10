@@ -103,9 +103,6 @@ export class JournalViewerComponent implements OnInit, OnChanges {
 		]
 	}
 
-
-
-
     private getFilters(): string[] {
         return this.filterService.getLabels();
     }
