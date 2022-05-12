@@ -18,22 +18,30 @@
     border: 2px solid blue;
 }
 
-.quote_container {
-    border: 2px solid black;
+.quote_card {
+    box-shadow: 0px 0px 10px 1px grey;
+    border-radius: .4rem;
     font-size: large;
-    width: 40%;
+    max-width: 35%;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    margin: .8rem;
+    padding: .5rem;
+}
+
+.quote_container {
+    margin: auto;
 }
 
 .quote_body {
-    border: 2px solid orchid;
     display: inline-block;
-    margin: 20px auto;
+    font-size: larger;
+    margin: .2rem 1rem;
 }
 
 .author_of_quote {
-    border: 2px dotted black;
     align-items: center;
-    // justify-content: space-around;
+    margin: .2rem 1rem;
+    color: rgb(88, 88, 88);
 }
