@@ -26,10 +26,6 @@ export class QuoteService {
 				author: "Michael Gervais"
 			},
 			{
-				text: "Life is not designed to hand us success or satisfaction, but rather to present us with challenges that make us grow. Mastery is the mysterious process by which those challenges become progressively easier and more satisfying through practice. The key to that satisfaction is to reach the nirvana in which love of practice for its own sake (intrinsic) replaces the original goal (extrinsic) as our goal.",
-				author: "Terry Laughlin"
-			},
-			{
 				text: "Secrets of the world are hidden behind cliches",
 				author: "Unknown"
 			},
