@@ -17,3 +17,23 @@
 .thong {
     border: 2px solid blue;
 }
+
+.quote_container {
+    border: 2px solid black;
+    font-size: large;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote_body {
+    border: 2px solid orchid;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.author_of_quote {
+    border: 2px dotted black;
+    align-items: center;
+    // justify-content: space-around;
+}

@@ -2,7 +2,14 @@
     <a class="navbar_item" routerLink="/dashboard">Back</a>
 </nav>
 
+
+
 <div class="thing_container">
+
+    <div class="quote_container">
+        <p class="quote_body">{{quote_of_the_day.text}}</p>
+        <p class="author_of_quote">- {{quote_of_the_day.author}}</p>
+    </div> 
 
     <div class="success_list_container thong">
         <success-list></success-list>
