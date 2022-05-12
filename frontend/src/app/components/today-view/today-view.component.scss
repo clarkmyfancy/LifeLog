@@ -1,7 +1,4 @@
-
-
-
-.thing_container {
+.body_content_container {
     border: 2px solid red;
     display: flex;
     flex-direction: column;
@@ -9,13 +6,9 @@
     justify-content: space-around;
 }
 
-.thing {
-    border: 2px dotted black;
-    margin: 20px;
-}
-
-.thong {
+.success_list_container {
     border: 2px solid blue;
+    margin: 2rem;
 }
 
 .quote_card {
