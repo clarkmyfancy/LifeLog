@@ -1,4 +1,21 @@
-.thing {
-    border: 2px solid orange;
-    margin: 2px;
+.todo_item_card {
+    box-shadow: 0px 0px 10px 1px grey;
+    border-radius: .4rem;
+    font-size: large;
+    display: flex;
+    background-color: white;
+    margin: .8rem;
+    padding: .5rem;
+}
+
+.task {
+    border: 2px solid black;
+    flex-grow: 3;
+}
+
+.mark_finished_button {
+    background-color: green;
+    color: white;
+    border-color: orange;
+    padding: .7rem 1rem;
 }
