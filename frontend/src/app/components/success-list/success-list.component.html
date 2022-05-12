@@ -1,13 +1,22 @@
 <div class="success_list_container_real">
 
     <p class="importance_prompt">
-        The single most important thing you can do today is
+        {{message}}
     </p>
 
     <div class="single_most_important_thing">
-        <todo-list-item></todo-list-item>
-        <!-- <todo-list-item></todo-list-item>
-        <todo-list-item></todo-list-item>
-        <todo-list-item></todo-list-item> -->
+
+        <div class="todo_item_card">
+
+            <p class="task">Do 100 pushups</p>
+            <button type="button" class="mark_finished_button"
+                (click)="markTaskComplete()">
+                I did it
+            </button>
+        
+        </div>
+        
+        <!-- <todo-list-item></todo-list-item> -->
+
     </div>
 </div>
