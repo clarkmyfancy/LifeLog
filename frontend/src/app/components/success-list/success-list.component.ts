@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 
 @Component({
-  selector: 'success-list',
-  templateUrl: './success-list.component.html',
-  styleUrls: ['./success-list.component.scss']
+	selector: 'success-list',
+	templateUrl: './success-list.component.html',
+	styleUrls: ['./success-list.component.scss']
 })
 export class SuccessListComponent implements OnInit {
 
-  constructor() { }
+	@Output() taskCompletionStatus = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
-  }
+	message: string;
+
+	constructor() { }
+
+	ngOnInit(): void {
+		this.message = "The single most important thing I can do today is"
+	}
+
+	markTaskComplete(): void {
+		this.taskCompletionStatus.emit(true);
+	}
 
 }
