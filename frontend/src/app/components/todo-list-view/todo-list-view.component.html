@@ -15,52 +15,18 @@
     </div>
 </div>
 
-<div class="task_list_group important_and_urgent">
-    <div class="list_items_category_group_name">
-        Important and Urgent
-    </div>
+<task-list-group 
+    [groupName]="'Important and Urgent'">
+</task-list-group>
 
-    <div class="task_list_item">
-        <div class="task_name">
-            Sleep for 8 hours tonight
-        </div>
-    </div>
-</div>
+<task-list-group 
+    [groupName]="'Important and not Urgent'">
+</task-list-group>
 
+<task-list-group 
+    [groupName]="'Urgent yet Unimportant'">
+</task-list-group>
 
-<div class="task_list_group important_and_not_urgent">
-    <div class="list_items_category_group_name">
-        Important and not Urgent
-    </div>
-
-    <div class="task_list_item">
-        <div class="task_name">
-            Become President
-        </div>
-
-    </div>
-</div>
-
-<div class="task_list_group urgent_yet_unimportant">
-    <div class="list_items_category_group_name">
-        Urgent yet Unimportant
-    </div>
-
-    <div class="task_list_item">
-        <div class="task_name">
-            Take the trash out
-        </div>
-    </div>
-</div>
-
-<div class="task_list_group not_urgent_and_unimportant">
-    <div class="list_items_category_group_name">
-        Urgent yet Unimportant
-    </div>
-
-    <div class="task_list_item">
-        <div class="task_name">
-            Buy a brand new car
-        </div>
-    </div>
-</div>
+<task-list-group 
+    [groupName]="'Unimportant and not Urgent'">
+</task-list-group>
