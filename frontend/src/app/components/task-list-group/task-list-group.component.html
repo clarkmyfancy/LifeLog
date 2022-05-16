@@ -1,0 +1,13 @@
+<div class="task_list_group important_and_urgent">
+    <div class="list_items_category_group_name">
+        {{groupName}}
+    </div>
+
+
+    <div *ngFor="let task of tasks"
+        class="task_list_item">
+        <div class="task_name">
+            {{task.title}}
+        </div>
+    </div>
+</div>
