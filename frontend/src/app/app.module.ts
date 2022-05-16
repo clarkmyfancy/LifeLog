@@ -17,6 +17,7 @@ import { TodayviewComponent } from '@components/today-view/today-view.component'
 import { SuccessListComponent } from '@components/success-list/success-list.component';
 import { TodoListItemComponent } from '@components/todo-list-item/todo-list-item.component';
 import { TodoListViewComponent } from '@components/todo-list-view/todo-list-view.component';
+import { TaskListGroupComponent } from '@components/task-list-group/task-list-group.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { TodoListViewComponent } from '@components/todo-list-view/todo-list-view
     SuccessListComponent,
     TodoListItemComponent,
     TodoListViewComponent,
+    TaskListGroupComponent,
   ],
 
   imports: [
