@@ -4,17 +4,48 @@
 
 
 
+
 <div class="body_content_container">
 
-    <div class="quote_card">
-        <div class="quote_container">
-            <p class="quote_body">{{quote_of_the_day.text}}</p>
-            <p class="author_of_quote">- {{quote_of_the_day.author}}</p>
-        </div>
-    </div> 
 
-    <div class="success_list_container">
-        <success-list></success-list>
+
+
+    <div class="day_view_left_side_bar">
+
+        <div class="quote_card">
+            <div class="quote_container">
+                <p class="quote_body">{{quote_of_the_day.text}}</p>
+                <p class="author_of_quote">- {{quote_of_the_day.author}}</p>
+            </div>
+        </div> 
+
+        <div class="daily_tasks_lists">
+
+            <todo-list-view></todo-list-view>
+            
+        </div>
+
     </div>
+
+    <div class="success_list_right_side_pane">
+        <div class="success_list_container">
+            <success-list></success-list>
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+
+
+
+
+
+
+
 
 </div>
