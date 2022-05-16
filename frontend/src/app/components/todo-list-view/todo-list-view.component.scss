@@ -1,0 +1,42 @@
+.task_list_group {
+    border: 2px dotted blueviolet;
+    margin: 1rem;
+    box-shadow: 0px 0px 10px 1px grey;
+    border-radius: .4rem;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgoldenrodyellow;
+    margin: .8rem;
+    padding: .5rem;
+}
+
+.success_list {
+    background-color: lightgoldenrodyellow;
+}
+
+.important_and_urgent {
+    background-color: lightblue;
+}
+
+.important_and_not_urgent {
+    background-color: greenyellow;
+}
+
+.urgent_yet_unimportant {
+    background-color: bisque;
+}
+
+.not_urgent_and_unimportant {
+    background-color: darkseagreen;
+}
+
+.task_list_item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task_name {
+    margin-left: 1rem;
+    background-color: aliceblue;
+}
