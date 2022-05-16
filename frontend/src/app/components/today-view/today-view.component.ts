@@ -12,6 +12,8 @@ export class TodayviewComponent implements OnInit {
 
 	quote_of_the_day: Quote;
 
+	successListItemCompleted: boolean = false;
+
   	constructor(
 		private quoteService: QuoteService
 	) { }
@@ -22,6 +24,20 @@ export class TodayviewComponent implements OnInit {
 
 	public populateQuote(): void {
 		this.quote_of_the_day = this.quoteService.getRandomQuote();
+		// this.quoteService.getQuoteBasedOnDayOfMonth();
 	}
 
+	markTaskCompleted(completionStatus: boolean): void {
+		this.successListItemCompleted = completionStatus;
+	}
+
+	// public generateClassForSuccessListItemCompletion(): string {
+	// 	var appropriate_class = "hidden";
+	// 	if (this.successListItemCompleted) {
+	// 		appropriate_class = "visible";
+	// 	}
+	// 	return appropriate_class;
+	// }
+
 }
+
