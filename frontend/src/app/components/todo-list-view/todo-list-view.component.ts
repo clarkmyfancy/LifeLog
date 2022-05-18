@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Task } from '@viewmodels/Task';
-import { TaskService } from '@services/Task/task.service';
-
 @Component({
 	selector: 'todo-list-view',
 	templateUrl: './todo-list-view.component.html',
@@ -12,30 +9,16 @@ export class TodoListViewComponent implements OnInit {
 
 	successListItemCompleted: boolean = false;
 
-	imporantTasks: Task[];
-	urgentTasks: Task[];
-	imporantAndUrgentTasks: Task[];
-	neitherImportantNorUrgentTasks: Task[];
+	task_group_types: string[] = [
+		'Important and Urgent',
+		'Important and not Urgent',
+		'Urgent yet Unimportant',
+		'Unimportant and not Urgent'
+	];
 
-
-	// thing: any[] = {
-	// 	title: "Important and Urgent",
-
-	// };
-
-	constructor(
-		private taskService: TaskService
-	) { }
+	constructor() { }
 
 	ngOnInit(): void {
-		this.retrieveAllTasks();
-	}
-
-	private retrieveAllTasks() {
-		this.imporantTasks = this.taskService.getImportantOnlyTasks();
-		this.urgentTasks = this.taskService.getUrgentOnlyTasks();
-		this.imporantAndUrgentTasks = this.taskService.getImportantAndUrgentTasks();
-		this.neitherImportantNorUrgentTasks = this.taskService.getTasksThatAreNeitherImportantNorUrgent();
 	}
 
   	public generateClassForSuccessListItemCompletion(): string {
