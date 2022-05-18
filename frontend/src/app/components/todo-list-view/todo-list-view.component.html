@@ -15,18 +15,6 @@
     </div>
 </div>
 
-<task-list-group 
-    [groupName]="'Important and Urgent'">
-</task-list-group>
-
-<task-list-group 
-    [groupName]="'Important and not Urgent'">
-</task-list-group>
-
-<task-list-group 
-    [groupName]="'Urgent yet Unimportant'">
-</task-list-group>
-
-<task-list-group 
-    [groupName]="'Unimportant and not Urgent'">
+<task-list-group *ngFor="let taskGroup of task_group_types"
+    [groupName]="taskGroup">
 </task-list-group>
