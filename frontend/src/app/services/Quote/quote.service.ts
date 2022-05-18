@@ -52,6 +52,14 @@ export class QuoteService {
 				text: "Your work works on you more than you work on it",
 				author: "unknown"
 			},
+			{
+				text: "These individuals have riches just as we say that we `have a fever,` when really the fever has us.",
+				author: "Seneca"
+			},
+			{
+				text: "You are what you repeat. You are what you repeat. You are what you..",
+				author: "unknown"
+			}
 		];
 	}
 }
