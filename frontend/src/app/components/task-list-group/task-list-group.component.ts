@@ -10,9 +10,10 @@ import { TaskService } from '@services/Task/task.service';
 })
 export class TaskListGroupComponent implements OnInit {
 
-	tasks: Task[];
-
 	@Input() groupName: string;
+
+	tasks: Task[];
+	
 
 	constructor(
 		private taskService: TaskService
