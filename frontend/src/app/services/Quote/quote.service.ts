@@ -59,6 +59,10 @@ export class QuoteService {
 			{
 				text: "You are what you repeat. You are what you repeat. You are what you..",
 				author: "unknown"
+			},
+			{
+				text: "If you want to be remembered, either do things worth writing, or write things worth reading",
+				author: "unknown"
 			}
 		];
 	}
