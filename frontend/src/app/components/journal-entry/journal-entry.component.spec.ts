@@ -31,7 +31,7 @@ describe('JournalEntryComponent', () => {
         // user picked a category and category has subcategories
         component.categoryWasChosen = true;
         expect(component.shouldDisplaySubcategoriesFor('mental')).toBeFalse(); // because when this code was written, "mental" didn't have any subcategories
-        expect(component.shouldDisplaySubcategoriesFor('physical')).toBeTrue();
+        expect(component.shouldDisplaySubcategoriesFor('Physical')).toBeTrue();
     });
 
     
@@ -43,21 +43,5 @@ describe('JournalEntryComponent', () => {
     it('should return false if user hasnt yet selected area of life', () => {
         component.categoryWasChosen = false;
         expect(component.userSelectedAreaOfLifeLabel()).toBe(false)
-    });
-
-
-    it('should return relevant subcategories', () => {
-        const input = 'mental';
-        const expectation: string[] = [];
-
-        const input2 = 'physical';
-        const expectation2 = [ 
-            "Diet",
-            "Training",
-            "General Health"
-        ];
-
-        expect(component.getRelevantSubcategories(input)).toEqual(expectation);
-        expect(component.getRelevantSubcategories(input2)).toEqual(expectation2);
     });
 });

@@ -16,10 +16,13 @@ describe('CategoryChooserComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CategoryChooserComponent);
     component = fixture.componentInstance;
+    let chosenCategory = "Physical"; // I feel like it's actually super important this string is exactly what it is
+    component.chosenCategory = chosenCategory;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+
     expect(component).toBeTruthy();
   });
 });
