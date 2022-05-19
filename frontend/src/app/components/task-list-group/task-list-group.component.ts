@@ -13,45 +13,52 @@ export class TaskListGroupComponent implements OnInit {
 	@Input() groupName: string;
 
 	tasks: Task[];
-	
+	appropriateTasksForGroup: Task[];
 
 	constructor(
 		private taskService: TaskService
 	) { }
 
 	ngOnInit(): void {
-		this.getAppropriateTasks();
+		this.getAllTasks();
 	}
 
-	private getAppropriateTasks() {
+	private getAllTasks() {
+		this.taskService.getTasks().subscribe(_tasks => {
+			this.tasks = _tasks
+			this.filterOutInappropriateTasksForGroup();
+		});
+	}
+
+	private filterOutInappropriateTasksForGroup() {
 		if (this.groupName == "Important and Urgent") {
-			this.retrieveImportantAndUrgentTasks();
+			this.grabOnlyImportantAndUrgentTasks();
 		}
 		else if (this.groupName == "Important and not Urgent") {
-			this.retrieveImportantYetNotUrgentTasks();
+			this.grabImportantButNotUrgentTasks();
 		}
 		else if (this.groupName == "Urgent yet Unimportant") {
 			this.retrieveUrgentYetUnimportantTasks();
 		}
-		else if (this.groupName == "Unimportant and not Urgent") {
-			this.retrieveTheTasksThatAreNeitherImporantNorUrgent();
+		else {
+			this.grabTheTasksThatAreNeitherImporantNorUrgent();
 		}
 	}
 
-	private retrieveImportantAndUrgentTasks() {
-		this.tasks = this.taskService.getImportantAndUrgentTasks();
+	private grabOnlyImportantAndUrgentTasks() {
+		this.appropriateTasksForGroup = this.tasks.filter(task => task.isImportant && task.isUrgent);
 	}
 
-	private retrieveImportantYetNotUrgentTasks() {
-		this.tasks = this.taskService.getImportantOnlyTasks();
+	private grabImportantButNotUrgentTasks() {
+		this.appropriateTasksForGroup = this.tasks.filter(task => task.isImportant && !task.isUrgent);
 	}
 
 	private retrieveUrgentYetUnimportantTasks() {
-		this.tasks = this.taskService.getUrgentOnlyTasks();
+		this.appropriateTasksForGroup = this.tasks.filter(task => !task.isImportant && task.isUrgent);
 	}
 
-	private retrieveTheTasksThatAreNeitherImporantNorUrgent() {
-		this.tasks = this.taskService.getTasksThatAreNeitherImportantNorUrgent();
+	private grabTheTasksThatAreNeitherImporantNorUrgent() {
+		this.appropriateTasksForGroup = this.tasks.filter(task => !task.isImportant && !task.isUrgent);
 	}
 
 }
