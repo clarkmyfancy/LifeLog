@@ -78,11 +78,6 @@ export class JournalEntryComponent implements OnInit {
         }
         return results;
     }
-
-    doThing(): void {
-        console.log(this.journalEntry);
-    }
-
     
     // FIXME: this function is duplicated, does it need to be dry? 
     currentlySelectedCategory(buttonsCategory: any): boolean {
