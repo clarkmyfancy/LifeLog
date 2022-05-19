@@ -4,7 +4,7 @@
     </div>
 
 
-    <div *ngFor="let task of tasks"
+    <div *ngFor="let task of appropriateTasksForGroup"
         class="task_list_item">
         <div class="task_name">
             {{task.title}}
