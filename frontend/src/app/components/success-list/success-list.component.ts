@@ -1,5 +1,10 @@
 import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 
+import { TaskService } from '@services/Task/task.service';
+import { TheOneThingService } from '@services/TheOneThing/the-one-thing.service';
+
+import { Task } from '@viewmodels/Task';
+
 @Component({
 	selector: 'success-list',
 	templateUrl: './success-list.component.html',
@@ -7,18 +12,32 @@ import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 })
 export class SuccessListComponent implements OnInit {
 
-	@Output() taskCompletionStatus = new EventEmitter<boolean>();
+	// this component should be responsible for:
+		// displaying the most important task that can be done right now
 
 	message: string;
 
-	constructor() { }
+	nextTask: Task;
+
+	constructor(
+		private theOneThingService: TheOneThingService,
+		private taskService: TaskService
+	) { }
 
 	ngOnInit(): void {
-		this.message = "The single most important thing I can do today is"
+		this.message = "What's the one thing I can do, such that by doing it, everything else would be made easier or unnecessary?"
+		this.getNextTaskToDo();
 	}
 
-	markTaskComplete(): void {
-		this.taskCompletionStatus.emit(true);
+	async getNextTaskToDo() {
+		this.nextTask = await this.theOneThingService.grabTheNextOneThingThatIfDoneWillMakeEverythingElseEasierOrUnnecessary();
 	}
 
+	markTaskComplete(task: Task): void {
+		this.taskService.markTaskAsCompleted(task).subscribe(
+			updatedTask => {
+				console.log("task updated");
+			}
+		);
+	}
 }
