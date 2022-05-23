@@ -13,6 +13,13 @@ export class HttpRequestInterceptor implements HttpInterceptor {
         request = request.clone({
             url: base_url_of_server + request.url,
         });
+
+        // TODO: May 23, 2022 -> maybe figure this out but when doing put requests there has to be a trailing slash for this to work with the django-rest-framework
+        if (request.method == "PUT") {
+            request = request.clone({
+                url: request.url + "/",
+            });
+        }
         return next.handle(request);
     }
 }
