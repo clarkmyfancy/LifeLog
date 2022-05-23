@@ -6,17 +6,17 @@
 
     <!-- <div class="single_most_important_thing_card"> -->
 
-        <div class="single_most_important_thing_card">
+        <div class="single_most_important_thing_card"
+            *ngIf="nextTask">
 
-            <p class="task">Do 100 pushups</p>
+            <p class="task">{{nextTask.title}}</p>
             <button type="button" class="mark_finished_button"
-                (click)="markTaskComplete()">
-                I did it
+                (click)="markTaskComplete(nextTask)">
+                I did it!
             </button>
         
         </div>
 
-        
         <!-- <todo-list-item></todo-list-item> -->
 
     <!-- </div> -->
