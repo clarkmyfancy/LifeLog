@@ -17,7 +17,11 @@ export class TaskListGroupComponent implements OnInit {
 
 	constructor(
 		private taskService: TaskService
-	) { }
+	) { 
+		this.taskService.taskChanged.subscribe((task) => {
+			console.log(task);
+		});
+	}
 
 	ngOnInit(): void {
 		this.getAllTasks();
@@ -46,19 +50,19 @@ export class TaskListGroupComponent implements OnInit {
 	}
 
 	private grabOnlyImportantAndUrgentTasks() {
-		this.appropriateTasksForGroup = this.tasks.filter(task => task.isImportant && task.isUrgent);
+		this.appropriateTasksForGroup = this.tasks.filter(task => task.is_important && task.is_urgent);
 	}
 
 	private grabImportantButNotUrgentTasks() {
-		this.appropriateTasksForGroup = this.tasks.filter(task => task.isImportant && !task.isUrgent);
+		this.appropriateTasksForGroup = this.tasks.filter(task => task.is_important && !task.is_urgent);
 	}
 
 	private retrieveUrgentYetUnimportantTasks() {
-		this.appropriateTasksForGroup = this.tasks.filter(task => !task.isImportant && task.isUrgent);
+		this.appropriateTasksForGroup = this.tasks.filter(task => !task.is_important && task.is_urgent);
 	}
 
 	private grabTheTasksThatAreNeitherImporantNorUrgent() {
-		this.appropriateTasksForGroup = this.tasks.filter(task => !task.isImportant && !task.isUrgent);
+		this.appropriateTasksForGroup = this.tasks.filter(task => !task.is_important && !task.is_urgent);
 	}
 
 }
