@@ -6,6 +6,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Task
         fields = [
+            'id',
             'creator', 
             'date_created', 
             'title',
