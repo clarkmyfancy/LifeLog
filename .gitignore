@@ -1,5 +1,7 @@
 # don't store images in version control
 *.png
+
+.DS_Store
 virtual_environment
 
 # Byte-compiled / optimized / DLL files
