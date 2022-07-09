@@ -63,7 +63,75 @@ export class QuoteService {
 			{
 				text: "If you want to be remembered, either do things worth writing, or write things worth reading",
 				author: "unknown"
-			}
+			},
+			{
+				text: "It is better to be a good man, than to darken the hills with your ponies",
+				author: "Father of Crazy Horse"
+			},
+			{
+				text: "What you seek is seeking you",
+				author: "Rumi"
+			}, 
+			{
+				text: "Self-sufficiency is another word for poverty",
+				author: "Matt Ridley"
+			},
+			{
+				text: "Diversity in council, unity in command",
+				author: "Cyrus the Great"
+			},
+			{
+				text: "Whenever there is any doubt, there is no doubt",
+				author: "David Mamet, Ronin"
+			},
+			{
+				text: "Hard choices, easy life. Easy choices, hard life.",
+				author: "Jerzy Gregorek"
+			},
+			{
+				text: "Get the hell out of my way.",
+				author: "John Galt, Atlas Shrugged"
+			},
+			{
+				text: "A man is rich in proportion to the number of things he can afford to let alone.",
+				author: "Henry David Thoreau"
+			},
+			{
+				text: "Things are never as good or as bad as they seem.",
+				author: "Andrew Ross Sorkin"
+			},
+			{
+				text: "Many a false step was made by standing still",
+				author: "fortune cookie"
+			},
+			{
+				text: "The best defense is a good offense",
+				author: "Dan Gable"
+			},
+			{
+				text: "Beware the investment activity that produces applause; the great moves are usually greeted by yawns.",
+				author: "Warren Buffett"
+			},
+			{
+				text: "The score takes care of itself",
+				author: "Bill Walsh"
+			},
+			{
+				text: "You do not rise to the level of your goals, you fall to the level of your systems",
+				author: "James Clear"
+			},
+			{
+				text: "If you must play, decide on three things at the start: the rules of the game, the stakes, and the quitting time.",
+				author: "Chinese proverb"
+			},
+			{
+				text: "It does not do harm to a mystery to know a little about it.",
+				author: "Richard Feynman"
+			},
+			{
+				text: "No one is better than their incentives.",
+				author: "Robert Breedlove"
+			},
 		];
 	}
 }
