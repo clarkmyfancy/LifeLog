@@ -18,6 +18,10 @@ export class TaskListGroupComponent implements OnInit {
 	constructor(
 		private taskService: TaskService
 	) { 
+		this.subscribeToChangesInTasks();
+	}
+
+	private subscribeToChangesInTasks() {
 		this.taskService.taskChanged.subscribe((task) => {
 			console.log(task);
 		});
