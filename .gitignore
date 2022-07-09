@@ -1,8 +1,15 @@
 # don't store images in version control
 *.png
 
+# more local stuff
 .DS_Store
 virtual_environment
+
+# local environment stuff
+.vscode
+
+# weird local filetypes
+**.itmz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
