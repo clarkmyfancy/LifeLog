@@ -37,6 +37,7 @@ export class SuccessListComponent implements OnInit {
 		this.taskService.markTaskAsCompleted(task).subscribe(
 			updatedTask => {
 				console.log("task updated");
+				window.location.reload();
 			}
 		);
 	}
