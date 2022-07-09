@@ -1,6 +1,6 @@
 # don't store images in version control
 *.png
-
+virtual_environment
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
