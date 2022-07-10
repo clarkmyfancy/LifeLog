@@ -12,9 +12,10 @@ Most of the useful info is kept in [the Wiki](https://github.com/clarkmyfancy/Li
 
 ##### Sites
 
+Production -> https://lifelog-frontend.herokuapp.com
+
 Note: this is deployed to a free heroku account. that means the dynos will spin-down after a few minutes of inactivity. If you click the link and nothing happens, just be patient :) and the dynos will spin up eventually
 
-Production -> https://lifelog-frontend.herokuapp.com
 
 ----
 
