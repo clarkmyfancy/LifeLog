@@ -4,6 +4,8 @@ The purpose of this is to replace all journaling, to-do-list-creating and goal s
 
 ### Resources
 
+Most of the useful info is kept in [the Wiki](https://github.com/clarkmyfancy/LifeLog/wiki)
+
 ----
 
 ##### Sites
