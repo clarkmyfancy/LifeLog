@@ -2,6 +2,8 @@ A one-stop-shop for planning and winning the day. Journaling + todolist (coming 
 
 The purpose of this is to replace all journaling, to-do-list-creating and goal setting. Currently I use several different apps to track my productive time and journal about what specifically was worked on and for how long. This app will take journal entries and combign them with goals in a visual tree-structure so you can see your productive time build up into a massive tree!
 
+---
+
 ### Resources
 
 Most of the useful info is kept in [the Wiki](https://github.com/clarkmyfancy/LifeLog/wiki)
